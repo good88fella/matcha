@@ -1,4 +1,7 @@
 #!/bin/bash
-docker stop matcha
-docker rm matcha
-docker rmi 21school/matcha
+NAME=matcha
+PREFIX=21school
+
+docker stop ${NAME}
+docker rm ${NAME}
+docker rmi ${PREFIX}/${NAME}
