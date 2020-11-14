@@ -6,6 +6,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import ru.school21.matcha.exception.UserAlreadyExistException;
 import ru.school21.matcha.service.UserAccountService;
 
 import javax.mail.AuthenticationFailedException;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
@@ -60,6 +62,18 @@ public class UserAccountController {
     public Response changeEmail(@RequestParam("newEmail") String newEmail, @RequestParam("password") String password) {
         service.changePassword(newEmail, password);
         return new Response(Collections.singletonList("Email address changed"), true);
+    }
+
+    @GetMapping("/sendcode")
+    public Response sendPasswordRecoveryCode(HttpSession session) {
+        service.sendPasswordRecoveryCode(session);
+        return new Response(Collections.singletonList("Code send to email"), true);
+    }
+
+    @GetMapping("/restorepassword")
+    public Response restorePassword(@RequestParam("code") String code, @RequestParam("newPassword") String newPassword, HttpSession session) {
+        service.restorePassword(code, newPassword, session);
+        return new Response(Collections.singletonList("New password created"), true);
     }
 
     @ExceptionHandler({MethodArgumentNotValidException.class, UserAlreadyExistException.class, InvalidParameterException.class,
