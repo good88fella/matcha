@@ -49,7 +49,11 @@ $(document).ready(function(){
                     password : $("#password").val()
                 }),
                 success : function(data) {
-
+                    if (data.success == 'true') {
+                        location.href = 'http://127.0.0.1:8081/index.html'
+                    } else {
+                        alert(data.messages);
+                    }
                 }
             });
         } else {
