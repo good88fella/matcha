@@ -16,7 +16,7 @@ $(document).ready(function(){
                     type : "post",
                     contentType : "application/json",
                     data : JSON.stringify({
-                        login : $("#username_c").val(),
+                        username : $("#username_c").val(),
                         firstName : $("#firstname_c").val(),
                         lastName : $("#lastname_c").val(),
                         password : $("#password_c").val(),
