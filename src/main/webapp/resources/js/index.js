@@ -1,5 +1,20 @@
 $(document).ready(function() {
-    
+    $("#mobout").click(function(){
+        $.ajax({
+            url : 'http://127.0.0.1:8081/logout',
+            type : "post",
+            success : function(data) {
+            }
+        });
+    });
+    $("#logout").click(function(){
+            $.ajax({
+            url : 'http://127.0.0.1:8081/logout',
+            type : "post",
+            success : function(data) {
+            }
+        });
+    });
     $('#but_inet').on('click', function(e) {
         document.getElementById('detailbuttons').style.display = 'none';
         document.getElementById('detailinform').style.display = 'block';
