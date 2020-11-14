@@ -45,7 +45,7 @@ $(document).ready(function(){
                 type : "post",
                 contentType : "application/json",
                 data : JSON.stringify({
-                    login : $("#username").val(),
+                    username : $("#username").val(),
                     password : $("#password").val()
                 }),
                 success : function(data) {
