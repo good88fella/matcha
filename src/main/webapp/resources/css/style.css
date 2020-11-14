@@ -1,0 +1,218 @@
+.container {
+    max-width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 1%;
+}
+
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.1);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    z-index: 100;
+}
+
+.b-popup .b-popup-content {
+    /*margin-top: 30vh;*/
+    margin: 30vh auto;
+    width:10%;
+    height: 10%;
+    padding:10px;
+    z-index: 100;
+}
+body {
+    background-image: url("1.jpeg");
+    background-size: 30px;
+}
+.panel-info {
+    border-color: #c461cb;
+}
+.panel-info>.panel-heading {
+    background-image: linear-gradient(to bottom, #ef82c5 0, #d824a0 100%);
+}
+ h1, h2, h3, h4, h5, h6 {
+    font-family: system-ui;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.1;
+    color: floralwhite;
+}
+.h4, h4 {
+    font-size: 39px;
+}
+.btn-primary {
+    background-image: linear-gradient(to bottom, #ef82c5 0, #d824a0 100%);
+    background-image: -webkit-linear-gradient(top,#ef82c5 0, #d824a0 100%);
+    background-image: -o-linear-gradient(top,#ef82c5 0, #d824a0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#d824a0),to(#ef82c5));
+    background-repeat: repeat-x;
+    border-color: #c461cb;
+}
+.btn-prymary:focus {
+    background-image: linear-gradient(to bottom, #d824a0 0,#ef82c5 100%);
+    background-repeat: repeat-x;
+    border-color: #c461cb;
+}
+a {
+    color: #c461cb !important;
+    padding-left: 10px;
+}
+.progress {
+    max-width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 4%;
+}
+
+#progressBar {
+    white-space: nowrap;
+    color: rgb(143, 22, 92);
+}
+#contact_description {
+    text-align: left;
+    padding-top: 20px;
+}
+
+#main_contant_success_discription {
+    margin: 2% auto;
+}
+
+#test_gif {
+    width: 50%;
+}
+
+#sysat_foto {
+    width: 100%;
+    text-align: center;
+    max-width: 1500px;
+}
+
+.panel-info {
+	width: 100%;
+}
+
+.panel-heading {
+   font-weight: bold;
+}
+
+.panel-body {
+    padding: 0px;
+	min-height: 102px;
+}
+
+canvas {
+	/*border: 1px solid black;*/
+    /*min-width: 90px;
+    min-height: 90px;*/
+}
+
+#canvas_del_icon {
+	position: absolute;
+	top: -13px;
+	right: 0px;
+    color:  red;
+}
+
+#canvas_del_icon:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 3px #880f3e;
+}
+
+/*#time_stamp_1 {
+	float: left;
+	padding: 6px;
+	position: relative;
+}*/
+
+.plupload_file_thumb {
+	/*width: : 100px;*/
+	/*height: 70px;*/
+    height: 62px;
+    border: 1px solid rgb(188, 232, 241);
+    /*width: : 100px;*/
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+#description {
+    margin-bottom: 20px;
+}
+
+#description p {
+    margin: 0 0 0px;
+}
+
+#password_c, #password {
+    text-transform: capitalize;
+}
+
+#username, #password,#username_c, #password_c, #passwordd_c, #email_c, #firstname_c, #lastname_c, #password_n, #passwordd_n, #email_n, #code_n {
+    margin: 0.5% auto; 
+    /*margin: 0.5% auto 2% auto;*/
+    width: 50%;
+    text-align: center;
+}
+
+#captcha {
+    margin: 1% auto; 
+    width: 20%;
+    text-align: center;
+    /* Все символы текста становятся строчными (нижний регистр) */
+    text-transform: lowercase;
+}
+
+.divs_input {
+    margin-bottom: 15px;
+}
+
+
+@media screen and (max-width:992px) {
+    .b-popup .b-popup-content {
+        width: 50vw;
+        height: 50vh;
+    }
+    #tariff_description_display {
+        margin-top: 3%;
+    }
+    #scan_passport_text {
+        font-size: 0.8em;
+    }
+    #username, #password,#username_c, #password_c, #passwordd_c, #email_c, #firstname_c, #lastname_c, #password_n, #passwordd_n, #email_n, #code_n {
+        margin: 1% auto; 
+        font-size: 1.3em;
+        width: 80%;
+    }
+    #captcha_img {
+        width: 40%;
+    }
+    #captcha {
+        margin: 3% auto; 
+        width: 42%;
+        font-size: 1.3em;
+        text-transform: lowercase;
+    }
+    /*#panel_heading_h2 h1 {
+        font-size: 28px;
+    }
+    #logo {
+        width: 75%;
+    }*/
+}
+h3 {
+    color:black;
+    font-size: 150px;
+}
+#login {
+    margin: 0px;
+}
+h3 b {
+    font-size: 25px;
+}
+em {
+    color: red;
+}
