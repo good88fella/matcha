@@ -1,5 +1,6 @@
 package ru.school21.matcha.service;
 
+import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.Authentication;
@@ -16,6 +17,7 @@ import ru.school21.matcha.exception.UserAlreadyExistException;
 import ru.school21.matcha.repository.UserRepository;
 import ru.school21.matcha.repository.VerificationTokenRepository;
 
+import javax.servlet.http.HttpSession;
 import java.security.InvalidParameterException;
 import java.util.Collections;
 
@@ -126,9 +128,35 @@ public class UserAccountServiceImpl implements UserAccountService {
         }
     }
 
+    @Override
+    public void sendPasswordRecoveryCode(HttpSession session) {
+        String code = RandomString.make(4).toUpperCase();
+        session.setAttribute("code", code);
+
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(getUserFromSession().getEmail());
+        mailMessage.setSubject("Code for restore password");
+        mailMessage.setFrom("matcha21@gmail.com");
+        mailMessage.setText("To restore password insert code: " + code + " in form");
+        emailSenderService.sendEmail(mailMessage);
+    }
+
+    @Override
+    public void restorePassword(String code, String newPassword, HttpSession session) {
+        String sessionCode = (String) session.getAttribute("code");
+        if (code.equals(sessionCode)) {
+            session.removeAttribute("code");
+            User user = getUserFromSession();
+            user.setPassword(passwordEncoder.encode(newPassword));
+            userRepository.save(user);
+        } else {
+            throw new InvalidParameterException("Invalid code");
+        }
+    }
+
     private User getUserFromSession() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getPrincipal().toString();
+        String username = (String) auth.getPrincipal();
         return userRepository.findByUsername(username);
     }
 }

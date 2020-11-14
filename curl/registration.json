@@ -1,5 +1,7 @@
 {
-  "login": "test",
+  "username": "test",
+  "firstName": "test",
+  "lastName": "test",
   "password": "example",
   "matchingPassword": "example",
   "email": "matcha.test@yandex.ru"
