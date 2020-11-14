@@ -27,7 +27,7 @@ $(document).ready(function(){
                         if (data.success == 'true') {
                             location.href = 'http://127.0.0.1:8081/login.html'
                         } else {
-                            alert(data.messages);
+                            alert(data.success);
                         }
                     }
                 });
