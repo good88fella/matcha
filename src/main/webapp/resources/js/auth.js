@@ -40,7 +40,7 @@ $(document).ready(function(){
         $("#err_msg").html('');
         if ((!($("#username").val() === '')) && (!($("#password").val() === ''))) {
             $.ajax({
-                url : '/api/myrequest',
+                url : 'http://127.0.0.1:8081/login',
                 datatype : 'json',
                 type : "post",
                 contentType : "application/json",

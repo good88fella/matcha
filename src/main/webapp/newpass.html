@@ -18,7 +18,7 @@
     <script src="resources/bootstrap/js/jquery-3.1.1.min.js"></script>
     <script src="resources/bootstrap/js/bootstrap.min.js"></script>
     <script src="resources/bootstrap/js/jquery-3.5.1.min.js"></script>
-    <script src="resources/js/auth.js"></script>
+    <script src="resources/js/newpass.js"></script>
     <link rel="stylesheet" href="resources/bootstrap/bootstrap-3.3.6/bootstrap-3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/bootstrap/bootstrap-3.3.6/bootstrap-3.3.6/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
@@ -45,21 +45,13 @@
                 <div class="panel-body" id="panel_body">
                     <div id="main_contant">
                         <div>
-                            <div class="divs_input" id="n1">
-                                <label for="email_n">E-mail</label>
-                                </br><input type="text" autocomplete="name"  id="email_n" class="form-control" placeholder="Email" aria-describedby="basic-addon1" />
+                            <div class="divs_input" id="n2" style="display: none;">
+                                <label for="code_n">Введите код из email:</label>
+                                </br><input type="text" autocomplete="name"  id="code_n" class="form-control" placeholder="Код подтверждения" aria-describedby="basic-addon1" />
                             </div>
                             <div class="divs_input" id="n3" style="display: none;">
                                 <label for="password_n">New password</label>
                                 </br><input type="password" autocomplete="name" name="passwd"  id="password_n" class="form-control" placeholder="Password" aria-describedby="basic-addon1"/>
-                            </div>
-                            <div class="divs_input" id="n3_1" style="display: none;">
-                                <label for="passwordd_n">Matching password</label>
-                                </br><input type="password" autocomplete="name" name="passwd"  id="passwordd_n" class="form-control" placeholder="Matching password" aria-describedby="basic-addon1"/>
-                            </div>
-                            <div class="divs_input" id="n2" style="display: none;">
-                                <label for="code_n">Введите код из email:</label>
-                                </br><input type="text" autocomplete="name"  id="code_n" class="form-control" placeholder="Код подтверждения" aria-describedby="basic-addon1" />
                             </div>
                             <div id="err_msg"></div>
                         </div>
@@ -69,8 +61,7 @@
                         <div class="panel-footer">
                             <!-- для дебага -->
                             <!--  <button id="button_send_letter_test" type="button" class="btn btn-primary">Отправить фотоотчёт</button>  -->
-                            <button id="newpass_1" type="button" class="btn btn-primary" >Подтвердить</button>
-                            <button id="newpass_2" type="button" class="btn btn-primary" style="display: none;">Подтвердить</button>
+                            <button id="newpass_2" type="button" class="btn btn-primary" >Отправить код</button>
                             <button id="newpass_3" type="button" class="btn btn-primary" style="display: none;">Подтвердить</button>
                         </div>
                     </div>
