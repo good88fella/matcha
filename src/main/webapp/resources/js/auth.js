@@ -24,7 +24,7 @@ $(document).ready(function(){
                         email : $("#email_c").val()
                     }),
                     success : function(data) {
-                        if (data.success == true) {
+                        if (data.success == 'true') {
                             location.href = 'http://127.0.0.1:8081/login.html'
                         } else {
                             alert(data.messages);
