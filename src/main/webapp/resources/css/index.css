@@ -2,7 +2,7 @@ body {
     background-image: url("1.jpeg");
     background-size: 30px;
 }
-.panel-info {
+.panel-info,.panel-primary {
     border-color: #c461cb;
 }
 .panel-info>.panel-heading {
@@ -76,7 +76,7 @@ a {
 #paytable {
     text-align: center;
 }
-#detailType {
+#detailType, #detailType1 {
     margin-bottom: 5px;
 }
 .panel-footer {
@@ -116,7 +116,7 @@ a {
     }
     #chats, #detailinform, #detailinform_nord, #detailinform_money {
         width: 65vw;
-        background-color: #ceeeff;
+        background-color: #ff8fe1;
         text-align: center;
         padding-left: 5px;
         padding-right: 5px;
@@ -130,7 +130,7 @@ a {
     #con {
         margin-left: 3vw;
     }
-    #detailType, #paymentType, #callType {
+    #detailType,#detailType1, #paymentType, #callType {
         width: 30vw !important;
     }
     #date1, #date2, #date1_nord, #date2_nord, #date1_money, #date2_money {
@@ -144,9 +144,9 @@ a {
         display: inline-block;
         width: 125px;
     }
-    #input_call {
+    #input_call, #firstname, #lastname, #email {
         text-align: center;
-        display: inline-block;
+        display: block;
         width: 250px;
     }
 }
@@ -258,7 +258,7 @@ a {
     #chats, #detailinform, #detailinform_nord, #detailinform_money {
         width: 91.5vw;
         margin-left: 0.3vw;
-        background-color: #ceeeff;
+        background-color: #ffc0e8;
         text-align: center;
         padding-left: 5px;
         padding-right: 5px;
@@ -266,7 +266,7 @@ a {
     .col-sm-12 {
         overflow: scroll;
     }
-    #input_call {
+    #input_call,#firstname, #lastname, #email {
         display: inline-block;
         width: 80%;
     }
@@ -351,12 +351,12 @@ ul {
     margin-bottom: 2vw;
 }
 h4, h5, hr {
-    color: #31708f;
+    color: #8f1564;
 }
 
 hr {
     margin: 5px;
-    border-top: 1px solid #31708f;
+    border-top: 1px solid #8f2b4d;
 }
 
 tr {
