@@ -3,8 +3,8 @@ package ru.school21.matcha.entity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.school21.matcha.utils.validation.email.ValidEmail;
-import ru.school21.matcha.utils.validation.password.PasswordMatches;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +21,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "t_user")
-@PasswordMatches
 public class User implements UserDetails {
 
     private static final long serialVersionUID = 1259641534805949841L;
@@ -47,7 +46,7 @@ public class User implements UserDetails {
     private String lastName;
 
     @NotBlank(message = "Password can't be empty")
-    @Size(min = 6, max = 32, message = "Password must be between 6 and 32 characters")
+    @Size(min = 6, max = 60, message = "Password must be between 6 and 60 characters")
     @Column(nullable = false, length = 60)
     private String password;
 
@@ -63,7 +62,7 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private boolean enabled;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private Set<Role> roles;
 
     public User() {

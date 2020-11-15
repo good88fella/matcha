@@ -58,6 +58,9 @@ public class UserAccountServiceImpl implements UserAccountService {
         if (emailExist(user.getEmail())) {
             throw new UserAlreadyExistException("Account already exist with that email address: " + user.getEmail());
         }
+        if (!user.getPassword().equals(user.getMatchingPassword())) {
+            throw new InvalidParameterException("Passwords don't match");
+        }
         correctUserParams(user);
         User saved = userRepository.save(user);
         sendEmail(saved);

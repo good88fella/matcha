@@ -29,15 +29,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                     //Доступ только для не зарегистрированных пользователей
-                    .antMatchers("/account/registration").not().fullyAuthenticated()
+                    .antMatchers("/create.html", "/account/registration").not().fullyAuthenticated()
                     //Доступ разрешен всем пользователям
-                    .antMatchers("/", "/home", "/main").permitAll()
+                    .antMatchers("/**").permitAll()
                     //Все остальные страницы требуют аутентификации
                     .anyRequest().authenticated()
                     .and()
                 //Настройка для входа в систему
                 .formLogin()
-                    .loginPage("/account/login")
+                    .loginPage("/login.html")
+                    .loginProcessingUrl("/account/login")
                     //Перенарпавление на главную страницу после успешного входа
                     .defaultSuccessUrl("/")
                     .permitAll()
